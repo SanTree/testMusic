@@ -7,10 +7,10 @@
   // get方式的参数
   var param = "?showapi_appid="+appid+"&showapi_sign="+secret;
   // 热门榜单访问接口
-  var hotUrl = "http://route.showapi.com/213-4"+param;
+  var hotUrl = "https://route.showapi.com/213-4"+param;
   // 根据歌名、人名查询歌曲接口
-  var searchByNameUrl = "http://route.showapi.com/213-1"+param;
-  var searchBIdUrl = "http://route.showapi.com/213-2" + param;
+  var searchByNameUrl = "https://route.showapi.com/213-1"+param;
+  var searchBIdUrl = "https://route.showapi.com/213-2" + param;
 
   module.exports = {
     config:{

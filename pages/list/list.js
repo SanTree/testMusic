@@ -41,7 +41,7 @@ Page({
       success:function(e){
         console.log(e)
         if(e.statusCode==200){
-          var songlist = e.data.showapi_res_body.oagebean.songlist;
+          var songlist = e.data.showapi_res_body.pagebean.songlist;
           // 将时长转换为分秒的表示形式
           for(var i=0;i<songlist.length;i++){
             songlist[i].seconds = formatSeconds(songlist[i].seconds);
