@@ -1,10 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/play/play",
     "pages/list/list",
+    "pages/play/play",
     "pages/search/search",
     "pages/logs/logs"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -7,13 +7,17 @@
     <view class='songlist'>
        <block wx:for="{{songlist}}" wx:key="song_id">
           <view class='songitem'>
-             <navigator url='/pages/play/play?songid={{item.songid}}' class='song-play'>
-                <image src='/images/play.png' />
-             </navigator>
-             <navigator url='pages/play/play?songid={{item.songid}}' class='song-detail'>
+             <!-- <navigator open-type='switchTab' url="/pages/play/play?songid={{item.songid}}" class="song-play"><image src='/images/play.png' />
+             </navigator> -->
+             <view bindtap='goto_list' class='song-play' data-songid="{{item.songid}}"><image src='/images/play.png' /></view>
+             <!-- <navigator open-type='switchTab' url="/pages/play/play?songid={{item.songid}}" class='song-detail'>
                 <view class='song-title'>{{item.songname}}</view>
-                <view class='song-subtitle'>{{item.singername}} - {{item.second}}</view>
-             </navigator>
+                <view class='song-subtitle'>{{item.singername}} - {{item.seconds}}</view>
+             </navigator> -->
+             <view bindtap='goto_list' class='song-detail' data-songid="{{item.songid}}">
+                <view class='song-title'>{{item.songname}}</view>
+                <view class='song-subtitle'>{{item.singername}} - {{item.seconds}}</view>
+             </view>
           </view>
        </block>
     </view>

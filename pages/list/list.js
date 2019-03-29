@@ -1,6 +1,7 @@
 // pages/list/list.js
 // 导入配置文件
 var config = require('../../config.js');
+var app = getApp();//用于定义全局变量
 
 // 将秒数转换为分秒的表示形式
 var formatSeconds = function(value){
@@ -42,6 +43,7 @@ Page({
         console.log(e)
         if(e.statusCode==200){
           var songlist = e.data.showapi_res_body.pagebean.songlist;
+          console.log(songlist)
           // 将时长转换为分秒的表示形式
           for(var i=0;i<songlist.length;i++){
             songlist[i].seconds = formatSeconds(songlist[i].seconds);
@@ -58,6 +60,15 @@ Page({
           wx.setStorageSync('songlist', songlist);
         }
       }
+    })
+  },
+
+  // 跳转函数tabbar
+  goto_list:function(event){
+    console.log(event);
+    app.globalData.community_id = event.currentTarget.dataset.songid;
+    wx.switchTab({
+      url: '/pages/play/play',
     })
   }
 })
